@@ -167,5 +167,12 @@ int main(int argc, char* argv[]) {
   // we used on the FourInts above.  ptr->a is 
   // equivalent to (*ptr).a .  Note the difference 
   // between FourInts and FourInts*.)
+  FourInts* new_heap_array = (FourInts*) malloc(sizeof(FourInts));
+  fillArray((int*) new_heap_array, 4);
+  assert(new_heap_array->a == 2);
+  assert(new_heap_array->b == 5);
+  assert(new_heap_array->c == 8);
+  assert(new_heap_array->d == 11);
+  free(new_heap_array);
   return 0;
 }
